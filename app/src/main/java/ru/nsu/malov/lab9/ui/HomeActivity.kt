@@ -1,5 +1,6 @@
 package ru.nsu.malov.lab9.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
@@ -55,6 +56,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun sendMoney() {
-        TODO("Not yet implemented")
+        val intent = Intent(this, SendMoneyActivity::class.java)
+        startActivity(intent)
     }
 }

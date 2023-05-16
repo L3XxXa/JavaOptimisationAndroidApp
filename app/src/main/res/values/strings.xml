@@ -5,4 +5,7 @@
     <string name="money">0</string>
     <string name="money_text">Деняг:</string>
     <string name="send">Перевести</string>
+    <string name="to_whom">Кому кидаем за шаву</string>
+    <string name="money_amount">Сколько?</string>
+    <string name="send_money">Отправляем?</string>
 </resources>

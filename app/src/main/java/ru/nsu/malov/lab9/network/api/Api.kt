@@ -32,7 +32,7 @@ interface ApiService{
     suspend fun getBalance(@Path("token") token: String): GetBalanceResponseSerializer
 
     @PATCH("/sendMoney/{token}")
-    suspend fun getMoney(@Path("token") token: String, sendMoneyRequestSerializer: SendMoneyRequestSerializer): SendMoneyResponseSerializer
+    suspend fun sendMoney(@Path("token") token: String, sendMoneyRequestSerializer: SendMoneyRequestSerializer): SendMoneyResponseSerializer
 }
 
 object Api {
