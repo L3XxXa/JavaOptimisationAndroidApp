@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.nsu.malov.lab9.MainApp
+import ru.nsu.malov.lab9.R
 import ru.nsu.malov.lab9.di.AppComponent
 import ru.nsu.malov.lab9.log_tags.LogTags
 //import ru.nsu.malov.lab9.di.AppComponent
@@ -44,7 +45,8 @@ class LoginViewModel() : ViewModel(){
 
     private fun addTokenToSharedPrefs(token: String, login: String) {
         Log.d(LogTags.login, token)
-        val sharedPreferences = application.applicationContext.getSharedPreferences("token", Context.MODE_PRIVATE)
+        val sharedPreferences = application.applicationContext.getSharedPreferences(application.resources.getString(
+            R.string.app_name), Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("token", token)
         editor.putString("login", login)
