@@ -18,7 +18,7 @@ class SendMoneyRepository {
     suspend fun sendMoney(sendMoneyRequestSerializer: SendMoneyRequestSerializer, token: String): SendMoneyResponseSerializer{
         return Api.retrofitService.sendMoney(token, sendMoneyRequestSerializer)
     }
-    suspend fun sendCode(sendMoneyRequestSerializer: SendMoneyRequestSerializer, token: String): String{
-        return Api.retrofitService.acceptCode(token, sendMoneyRequestSerializer)
+    suspend fun sendCode(sendMoneyRequestSerializer: SendMoneyRequestSerializer, token: String){
+        Api.retrofitService.acceptCode(token, sendMoneyRequestSerializer)
     }
 }

@@ -57,6 +57,7 @@ class SendMoneyViewModel : ViewModel() {
 
     fun sendCode(string: Int){
         val balanceRepository = application.appComponent.getSendMoneyRepository()
+        Log.d(LogTags.sendMoney, sendMoneyRequestSerializer.toWhom + " to whom")
         _statusCode.value = StatusValue.LOADING
         val token = getToken()
         if (string != code){
@@ -71,7 +72,8 @@ class SendMoneyViewModel : ViewModel() {
         Log.d(LogTags.sendMoney, "Token is $token")
         viewModelScope.launch {
             try {
-                _responseCode.value = balanceRepository.sendCode(sendMoneyRequestSerializer, token)
+                val res = balanceRepository.sendCode(sendMoneyRequestSerializer, token)
+                Log.d(LogTags.sendMoney, "Result is $res")
                 _statusCode.value = StatusValue.SUCCESS
             } catch (e: Exception){
                 _statusCode.value = StatusValue.ERROR
