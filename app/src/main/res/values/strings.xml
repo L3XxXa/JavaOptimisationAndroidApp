@@ -8,4 +8,5 @@
     <string name="to_whom">Кому кидаем за шаву</string>
     <string name="money_amount">Сколько?</string>
     <string name="send_money">Отправляем?</string>
+    <string name="enter_code">Введите код</string>
 </resources>

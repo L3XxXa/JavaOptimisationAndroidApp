@@ -28,7 +28,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun getLogin() {
-        viewModel.getLogin(application as MainApp)
+        val login = viewModel.getLogin(application as MainApp)
+        binding.login.text = login
     }
 
     private fun getMoney() {

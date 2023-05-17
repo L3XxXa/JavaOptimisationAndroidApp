@@ -1,6 +1,5 @@
 package ru.nsu.malov.lab9.network.api
 
-import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
@@ -32,7 +31,7 @@ interface ApiService{
     suspend fun getBalance(@Path("token") token: String): GetBalanceResponseSerializer
 
     @PATCH("/sendMoney/{token}")
-    suspend fun sendMoney(@Path("token") token: String, sendMoneyRequestSerializer: SendMoneyRequestSerializer): SendMoneyResponseSerializer
+    suspend fun sendMoney(@Path("token") token: String, @Body sendMoneyRequestSerializer: SendMoneyRequestSerializer): SendMoneyResponseSerializer
 }
 
 object Api {

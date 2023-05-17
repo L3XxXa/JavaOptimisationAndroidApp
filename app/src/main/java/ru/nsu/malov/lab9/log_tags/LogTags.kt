@@ -4,5 +4,6 @@ class LogTags {
     companion object{
         const val login = "Login"
         const val balance = "Balance"
+        const val sendMoney = "SendMoney"
     }
 }
