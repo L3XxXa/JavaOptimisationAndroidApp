@@ -40,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
         viewModel.statusValue.observe(this){
             when (it){
                 StatusValue.ERROR -> {
-                    Log.e(LogTags.balance, "Error while getting balance ${viewModel.response}")
+                    Log.e(LogTags.balance, "Error while getting balance ${viewModel.response.value}")
                 }
                 StatusValue.SUCCESS -> {
                     Log.d(LogTags.balance, "Balance is ${viewModel.response.value!!.balance}")

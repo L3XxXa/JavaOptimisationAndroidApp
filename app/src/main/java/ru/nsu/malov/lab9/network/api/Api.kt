@@ -32,6 +32,11 @@ interface ApiService{
 
     @PATCH("/sendMoney/{token}")
     suspend fun sendMoney(@Path("token") token: String, @Body sendMoneyRequestSerializer: SendMoneyRequestSerializer): SendMoneyResponseSerializer
+
+    @PATCH("sendMoney/acceptCode/{token}")
+    suspend fun acceptCode(@Path("token") token: String, @Body sendMoneyRequestSerializer: SendMoneyRequestSerializer): String
+
+
 }
 
 object Api {

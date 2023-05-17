@@ -19,7 +19,7 @@ class HomeActivityViewModel: ViewModel() {
     val statusValue: LiveData<StatusValue> = _status
     private val _response = MutableLiveData<GetBalanceResponseSerializer>()
     val response: LiveData<GetBalanceResponseSerializer> = _response
-    private lateinit var application: Application
+    private lateinit var application: MainApp
 
     fun getBalance(application: MainApp){
         this.application = application
@@ -37,7 +37,7 @@ class HomeActivityViewModel: ViewModel() {
                 _status.value = StatusValue.SUCCESS
             } catch (e: Exception){
                 _status.value = StatusValue.ERROR
-                Log.e(LogTags.balance, "Error while getting balance ${e.message}")
+                Log.e(LogTags.balance, "Error while getting balance ${e.printStackTrace()}")
             }
         }
     }
